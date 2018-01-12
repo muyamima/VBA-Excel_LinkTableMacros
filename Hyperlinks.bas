@@ -136,8 +136,7 @@ Sub AddHyperlink()
     Next xCell
     
     'Save workbook. (Paths are only updated on save.)
-    WB.Save
-    
+    WB.Save    
 End Sub
 
 Function SelectFile() As String 'Open explorer to make file selection.
