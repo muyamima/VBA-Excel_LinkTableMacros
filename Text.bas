@@ -23,6 +23,8 @@ Select Case Lang
                 GetText = "Prüft Verknüpfung:"
             Case 51 'Checking complete! & vbCrLf & Cells with broken or suspect links are highlighted in red.
                 GetText = "Prüfen fertig!" & vbCrLf & "Zellen mit defekter oder verdächter Verknüpfungen werden in Rot angezeigt."
+            Case 52 'Checking links.
+                GetText ="Verknüpfungen prüfen."
             Case 100 'Is the active sheet the sheet with Hyperlinks you would like to check?
                 GetText = "Sind im aktiven Blatt Verknüpfungen enthalten, die Sie prüfen möchten?"
             Case 101 'File needs to be saved in order to check links.
@@ -44,6 +46,8 @@ Select Case Lang
                 GetText = "Testing link:"
             Case 51 'Checking complete! & vbCrLf & Cells with broken or suspect links are highlighted in red.
                 GetText = "Checking complete!" & vbCrLf & "Cells with broken or suspect links are highlighted in red."
+            Case 52 'Checking links.
+                GetText ="Checking links."
             Case 100 'Is the active sheet the sheet with Hyperlinks you would like to check?
                 GetText = "Is the active sheet the sheet with Hyperlinks you would like to check?"
             Case 101 'File needs to be saved in order to check links.
