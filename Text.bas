@@ -19,6 +19,8 @@ Select Case Lang
                 GetText = "Keine Datei ausgewählt."
             Case 20 'This item has no file extention.
                 GetText = "Diese Datei hat keine Dateierweiterung."
+            Case 21 'Add a hyperlink.
+                GetText = "Verknüpfung machen."
             Case 50 'Testing link:
                 GetText = "Prüft Verknüpfung:"
             Case 51 'Checking complete! & vbCrLf & Cells with broken or suspect links are highlighted in red.
@@ -42,6 +44,8 @@ Select Case Lang
                 GetText = "No file was selected."
             Case 20 'This item has no file extention.
                 GetText = "This item has no file extention."
+            Case 21 'Add a hyperlink.
+                GetText = "Add a hyperlink."
             Case 50 'Testing link:
                 GetText = "Testing link:"
             Case 51 'Checking complete! & vbCrLf & Cells with broken or suspect links are highlighted in red.
