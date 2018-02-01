@@ -125,7 +125,7 @@ Sub AddHyperlink()
         Else
             FileNameEnd = InStrRev(LinkName, ".", , 1) - 1
             If FileNameEnd < 1 Then
-                MsgBox Text.GetText(20), vbCritical
+                MsgBox Text.GetText(20), vbCritical, Text.GetText(21)
                 Exit Sub
             End If
 '            LinkName = Mid(LinkName, 1, FileNameEnd)
