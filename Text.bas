@@ -69,11 +69,14 @@ Private Function GetLang() As String
 End Function
 
 Private Sub TestText()
-Dim MsgNr As Integer: MsgNr = 0
+Dim MsgNr As String: MsgNr = "0"
 Dim Lang As String: Lang = ""
 
 Lang = InputBox("Enter language code:" & vbCrLf & "(ISO 639 language codes, double or triple.)", "Test text messages.")
 MsgNr = InputBox("Enter the message number to check:", "Test text messages.")
-
-MsgBox "Message number " & MsgNr & " for " & Chr(34) & Lang & Chr(34) & " reads:" & vbCrLf & GetText(MsgNr, Lang), vbOKOnly, "Test text messages."
+If MsgNr = "" Then
+    MsgNr = "0"
+End If
+        
+MsgBox "Message number " & MsgNr & " for " & Chr(34) & Lang & Chr(34) & " reads:" & vbCrLf & GetText(CInt(MsgNr), Lang), vbOKOnly, "Test text messages."
 End Sub
