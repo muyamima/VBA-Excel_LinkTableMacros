@@ -1,6 +1,6 @@
 Attribute VB_Name = "HyperlinkMacros"
 Sub AuditHyperlinks()
-    If MsgBox("Is the active sheet the sheet with the hyperlinks you would like to check?", vbYesNo) = vbNo Then
+    If MsgBox(Text.GetText(100), vbYesNo, Text.GetText(52)) = vbNo Then
         Exit Sub
     End If
 
@@ -16,7 +16,7 @@ Sub AuditHyperlinks()
         Dim FileSaveAs As Boolean: FileSaveAs = 0
         FileSaveAs = Application.Dialogs(xlDialogSaveAs).Show(WBPath)
         If Not FileSaveAs Then
-            MsgBox "File needs to be saved in order to check links.", vbCritical
+            MsgBox Text.GetText(101), vbInformation, Text.GetText(52)
             Exit Sub
         End If
     End If
@@ -32,7 +32,7 @@ Sub AuditHyperlinks()
             LinkPath = WBPath & LinkPath
         End If
       
-        Application.StatusBar = "Testing Link: " & LinkPath
+        Application.StatusBar = Text.GetText(50) & LinkPath
     
         'Test links.
         If Left(LinkPath, 4) = "http" Then
@@ -51,7 +51,7 @@ Sub AuditHyperlinks()
 
     Application.StatusBar = False
     WB.Save
-    MsgBox ("Checking complete!" & vbCrLf & "Cells with broken or suspect links are highlighted in red.")
+    MsgBox Text.GetText(51), , Text.GetText(52)
 End Sub
 
 Function TestWebAddress(WebAddress As String) As Boolean
@@ -121,11 +121,11 @@ Sub AddHyperlink()
                 LinkName = Mid(LinkPath, 9)
             End If
 
-        'Check for fileextention.
+        'Check for file extention.
         Else
             FileNameEnd = InStrRev(LinkName, ".", , 1) - 1
             If FileNameEnd < 1 Then
-                MsgBox ("This item has no file extention.")
+                MsgBox Text.GetText(20), vbCritical, Text.GetText(21)
                 Exit Sub
             End If
 '            LinkName = Mid(LinkName, 1, FileNameEnd)
@@ -147,14 +147,14 @@ Function SelectFile() As String 'Open explorer to make file selection.
     'File Selection Dialog Box.
     With Application.FileDialog(msoFileDialogFilePicker)
         .AllowMultiSelect = 0   'Only one file at a time!
-        .ButtonName = "Select"
+        .ButtonName = Text.GetText(1)
         .InitialFileName = WBPath   'Start in workbook folder.
-        .Title = "Select a file."
+        .Title = Text.GetText(2)
         .Show
         If .SelectedItems.Count > 0 Then    'Return complete filepath if a file was selected.
             SelectFile = .SelectedItems(1)
         Else
-            MsgBox "No file was selected."
+            MsgBox Text.GetText(3), vbCritical
         End If
     End With
 End Function
@@ -183,10 +183,10 @@ Private Sub ReplacePath()   'Fix relative links broken by opening/saving in the 
             LinkPath = LinkPath & LinkName
         End If
         
-        'Check for fileextention.
+        'Check for file extention.
         FileNameEnd = InStrRev(LinkName, ".", , 1) - 1
             If FileNameEnd < 1 Then
-                MsgBox ("This item has no file extention.")
+                MsgBox Text.GetText(20), vbCritical
                 Exit Sub
             End If
 '        LinkName = Mid(LinkName, 1, FileNameEnd)
