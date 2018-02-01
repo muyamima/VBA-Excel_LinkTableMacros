@@ -12,21 +12,21 @@ Select Case Lang
     Case "de", "deu", "ger"
         Select Case MsgNr
             Case 1 'Select
-                GetText = "Wählen"
+                GetText = "WÃ¤hlen"
             Case 2 'Select a file.
-                GetText = "Datei auswählen."
+                GetText = "Datei auswÃ¤hlen."
             Case 3 'No file was selected.
-                GetText = "Keine Datei ausgewählt."
+                GetText = "Keine Datei ausgewÃ¤hlt."
             Case 20 'This item has no file extention.
                 GetText = "Diese Datei hat keine Dateierweiterung."
             Case 50 'Testing link:
-                GetText = "Prüft Verknüpfung:"
+                GetText = "PrÃ¼ft VerknÃ¼pfung:"
             Case 51 'Checking complete! & vbCrLf & Cells with broken or suspect links are highlighted in red.
-                GetText = "Prüfen fertig!" & vbCrLf & "Zellen mit defekter oder verdächter Verknüpfungen werden in Rot angezeigt."
+                GetText = "PrÃ¼fen fertig!" & vbCrLf & "Zellen mit defekter oder verdÃ¤chter VerknÃ¼pfungen werden in Rot angezeigt."
             Case 100 'Is the active sheet the sheet with Hyperlinks you would like to check?
-                GetText = "Sind im aktiven Blatt Verknüpfungen enthalten, die Sie prüfen möchten?"
+                GetText = "Sind im aktiven Blatt VerknÃ¼pfungen enthalten, die Sie prÃ¼fen mÃ¶chten?"
             Case 101 'File needs to be saved in order to check links.
-                GetText = "Die Datei muss gespeichert werden damit die Verknüpfungen geprüft werden können."
+                GetText = "Die Datei muss gespeichert werden damit die VerknÃ¼pfungen geprÃ¼ft werden kÃ¶nnen."
             Case Else 'No message defined.
                 GetText = "Keine Meldung definiert."
         End Select
@@ -53,6 +53,7 @@ Select Case Lang
         End Select
     End Select
 End Function
+
 Private Function GetLang() As String
     Dim Lang As String: Lang = "de"
     
@@ -67,5 +68,4 @@ Lang = InputBox("Enter language code:" & vbCrLf & "(ISO 639 language codes, doub
 MsgNr = InputBox("Enter the message number to check:", "Test text messages.")
 
 MsgBox "Message number " & MsgNr & " for " & Chr(34) & Lang & Chr(34) & " reads:" & vbCrLf & GetText(MsgNr, Lang), vbOKOnly, "Test text messages."
-
 End Sub
