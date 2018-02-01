@@ -1,6 +1,6 @@
 Attribute VB_Name = "HyperlinkMacros"
 Sub AuditHyperlinks()
-    If MsgBox(Text.GetText(100), vbYesNo) = vbNo Then
+    If MsgBox(Text.GetText(100), vbYesNo, Text.GetText(52)) = vbNo Then
         Exit Sub
     End If
 
@@ -16,7 +16,7 @@ Sub AuditHyperlinks()
         Dim FileSaveAs As Boolean: FileSaveAs = 0
         FileSaveAs = Application.Dialogs(xlDialogSaveAs).Show(WBPath)
         If Not FileSaveAs Then
-            MsgBox Text.GetText(101), vbInformation
+            MsgBox Text.GetText(101), vbInformation, Text.GetText(52)
             Exit Sub
         End If
     End If
@@ -51,7 +51,7 @@ Sub AuditHyperlinks()
 
     Application.StatusBar = False
     WB.Save
-    MsgBox (Text.GetText(51))
+        MsgBox Text.GetText(51), , Text.GetText(52)
 End Sub
 
 Function TestWebAddress(WebAddress As String) As Boolean
