@@ -51,7 +51,7 @@ Sub AuditHyperlinks()
 
     Application.StatusBar = False
     WB.Save
-        MsgBox Text.GetText(51), , Text.GetText(52)
+    MsgBox Text.GetText(51), , Text.GetText(52)
 End Sub
 
 Function TestWebAddress(WebAddress As String) As Boolean
