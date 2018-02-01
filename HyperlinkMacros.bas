@@ -16,7 +16,7 @@ Sub AuditHyperlinks()
         Dim FileSaveAs As Boolean: FileSaveAs = 0
         FileSaveAs = Application.Dialogs(xlDialogSaveAs).Show(WBPath)
         If Not FileSaveAs Then
-                    MsgBox Text.GetText(101), vbInformation
+            MsgBox Text.GetText(101), vbInformation
             Exit Sub
         End If
     End If
@@ -186,7 +186,7 @@ Private Sub ReplacePath()   'Fix relative links broken by opening/saving in the 
         'Check for file extention.
         FileNameEnd = InStrRev(LinkName, ".", , 1) - 1
             If FileNameEnd < 1 Then
-                        MsgBox Text.GetText(20), vbCritical
+                MsgBox Text.GetText(20), vbCritical
                 Exit Sub
             End If
 '        LinkName = Mid(LinkName, 1, FileNameEnd)
