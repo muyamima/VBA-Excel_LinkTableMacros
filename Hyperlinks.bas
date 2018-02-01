@@ -1,4 +1,4 @@
-Attribute VB_Name = "Hyperlinks"
+Attribute VB_Name = "HyperlinkMacros"
 Sub AuditHyperlinks()
     If MsgBox("Is the active sheet the sheet with the hyperlinks you would like to check?", vbYesNo) = vbNo Then
         Exit Sub
